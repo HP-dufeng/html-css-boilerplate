@@ -41,10 +41,14 @@ const config = {
                 use: [
                     {
                         loader: 'url-loader',
-                        options: { limit: 40000, name: 'assets/[name]-[hash].[ext]' }
+                        options: { limit: 10, name: 'assets/[name]-[hash].[ext]' }
                     }
                 ]
-            }
+            },
+            {
+                test: /\.html$/,
+                use: 'html-loader'
+            },
         ]
     },
     devServer: {

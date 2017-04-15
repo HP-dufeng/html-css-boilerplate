@@ -48,10 +48,14 @@ const config = {
                 use: [
                     {
                         loader: 'url-loader',
-                        options: { limit: 40000, name: 'assets/[name]-[hash].[ext]' }
+                        options: { limit: 4000, name: 'assets/[name]-[hash].[ext]' }
                     }
                 ]
-            }
+            },
+            {
+                test: /\.html$/,
+                use: 'html-loader'
+            },
         ]
     },
     devtool: 'source-map'
